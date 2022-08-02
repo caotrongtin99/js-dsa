@@ -10,7 +10,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
- var preorderTraversal = function(root) {
+ var postorderTraversal = function(root) {
   const result = []
 
   function traversal(node){
@@ -18,9 +18,9 @@
           return;
       }
       
-      result.push(node.val)
       traversal(node.left)
       traversal(node.right)
+      result.push(node.val)
   }
 
   traversal(root)
